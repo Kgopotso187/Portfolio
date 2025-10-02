@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kgopotso Mbali Mhlala | Portfolio</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<style>
+  :root {
+    --bg: #ffffff;
+    --text: #222222;
+    --primary: #0077ff;
+    --card: #f5f5f5;
+  }
+  body.dark {
+    --bg: #121212;
+    --text: #f5f5f5;
+    --primary: #66aaff;
+    --card: #1e1e1e;
+  }
+
+  /* General */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+  }
+  h1,
+  h2,
+  h3 {
+    color: var(--primary);
+  }
+  section {
+    padding: 5rem 2rem;
+    min-height: 100vh;
+  }
+
+  /* Header */
+  header {
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    padding: 0.5rem;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--primary);
+  }
+  #mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text);
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    padding-top: 7rem;
+  }
+
+  /* About */
+  .socials a {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+  }
+  .socials a:hover {
+    color: var(--text);
+  }
+
+  /* Skills */
+  .skills-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .skill {
+    background: var(--card);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s;
+  }
+  .skill:hover {
+    transform: scale(1.05);
+  }
+
+  /* Projects */
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .project {
+    background: var(--card);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  .project:hover {
+    transform: translateY(-5px);
+  }
+  .project a {
+    display: inline-block;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: var(--primary);
+  }
+
+  /* Certifications */
+  .cert-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cert {
+    background: var(--card);
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    transition: transform 0.3s;
+  }
+  .cert:hover {
+    transform: scale(1.05);
+  }
+
+  /* Contact */
+  form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  input,
+  textarea {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: var(--card);
+    color: var(--text);
+  }
+  button {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover {
+    opacity: 0.8;
+  }
+
+  /* Scroll + fade-in */
+  html {
+    scroll-behavior: smooth;
+  }
+  section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <h1 class="logo">Kgopotso</h1>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="mode-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="hero">
+    <h2>Hi, I'm Kgopotso Mbali Mhlala</h2>
+    <p>Sales Consultant & Aspiring Tech Professional</p>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Dynamic and results-driven Sales Consultant with strong experience in telesales,
+      customer engagement, and now expanding into tech and digital solutions.
+      Known for consistently exceeding targets, building trust with clients, and learning new skills quickly.
+      Recently completed the FNB App Academy, gaining hands-on experience in HTML, CSS, JavaScript, and Python for app development —
+      showing strong adaptability and a hunger to grow in both sales and digital industries.
+      Eager to bring energy, innovation, and customer-centric thinking to a forward-looking organisation.
+    </p>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/kgopotso-mhlala-7720362a7" target="_blank" rel="noopener noreferrer"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <a href="https://github.com/Kgopotso187/" target="_blank" rel="noopener noreferrer"
+        ><i class="fab fa-github"></i
+      ></a>
+      <a href="https://www.instagram.com/mbalii.mhlala/" target="_blank" rel="noopener noreferrer"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a href="https://www.tiktok.com/@kgopotsomhlala/" target="_blank" rel="noopener noreferrer"
+        ><i class="fab fa-tiktok"></i
+      ></a>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill"><i class="fab fa-html5"></i> HTML</div>
+      <div class="skill"><i class="fab fa-css3-alt"></i> CSS</div>
+      <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project">
+        <h3>Calculator App</h3>
+        <p>Fully functional calculator with arithmetic and memory functions.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+        <a href="https://github.com/Kgopotso187/Calculator-App.git" target="_blank" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i> View Code</a
+        >
+      </div>
+      <div class="project">
+        <h3>Avengers App</h3>
+        <p>Interactive app showcasing Marvel's Avengers characters.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript, API</p>
+        <a href="https://github.com/Kgopotso187/Avengers-App.git" target="_blank" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i> View Code</a
+        >
+      </div>
+      <div class="project">
+        <h3>Weather App</h3>
+        <p>Real-time weather app with forecasts.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript, API</p>
+        <a href="https://github.com/Kgopotso187/Weather-App.git" target="_blank" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i> View Code</a
+        >
+      </div>
+      <div class="project">
+        <h3>Pine City Zoo</h3>
+        <p>Zoo management and visitor information system.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript, UI/UX</p>
+        <a href="https://github.com/Kgopotso187/Pine-city-zoo.git" target="_blank" rel="noopener noreferrer"
+          ><i class="fab fa-github"></i> View Code</a
+        >
+      </div>
+      <div class="project">
+        <h3>To Do List</h3>
+        <p>Task manager with clean UI and hover effects.</p>
+        <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+        <a href="#" ><i class="fab fa-github"></i> View Code</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="cert-container">
+      <div class="cert">🏅 FNB App Academy</div>
+      <div class="cert">📊 Python Data Analysis</div>
+      <div class="cert">📈 Data Analysis with Spreadsheets & SQL</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input
+        type="text"
+        placeholder="First Name"
+        name="first_name"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Surname"
+        name="surname"
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        name="email"
+        required
+      />
+      <textarea rows="4" placeholder="Message" name="message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+    // Dark/Light Mode
+    const toggle = document.getElementById("mode-toggle");
+    toggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      toggle.innerHTML = document.body.classList.contains("dark")
+        ? '<i class="fas fa-sun"></i>'
+        : '<i class="fas fa-moon"></i>';
+    });
+
+    // Scroll fade-in
+    const sections = document.querySelectorAll("section");
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach((sec) => {
+        const secTop = sec.getBoundingClientRect().top;
+        if (secTop < triggerBottom) sec.classList.add("visible");
+      });
+    };
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+
+    // Active nav link highlight
+    const navLinks = document.querySelectorAll(".nav-links a");
+    window.addEventListener("scroll", () => {
+      let fromTop = window.scrollY + 100;
+      navLinks.forEach((link) => {
+        let section = document.querySelector(link.getAttribute("href"));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          navLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
